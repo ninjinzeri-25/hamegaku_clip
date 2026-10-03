@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="はるめろ学園ARK部 はめ学D組のクリップ＆切り抜き集。全51本。">
+<title>はるめろ学園ARK部　はめ学D組 クリップ＆切り抜き集</title>
+<style>
+:root {
+  --paper:#fffdf5;
+  --paper2:#fff8df;
+  --ink:#3b3545;
+  --muted:#7b7285;
+  --pink:#ff7e9f;
+  --pink2:#ffd6e1;
+  --blue:#67b7e8;
+  --blue2:#d9f2ff;
+  --yellow:#ffd45c;
+  --green:#83cfa4;
+  --purple:#9b86e8;
+  --line:#eadfca;
+  --shadow:0 10px 0 rgba(86,69,91,.08), 0 16px 32px rgba(86,69,91,.10);
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%, rgba(255,212,92,.28) 0 90px, transparent 91px),
+    radial-gradient(circle at 92% 13%, rgba(103,183,232,.20) 0 110px, transparent 111px),
+    repeating-linear-gradient(0deg, rgba(120,100,80,.025) 0 1px, transparent 1px 5px),
+    var(--paper);
+  font-family:system-ui,-apple-system,"Segoe UI","Noto Sans JP",sans-serif;
+  line-height:1.7;
+}
+body::before {
+  content:"";
+  position:fixed; inset:0; pointer-events:none; opacity:.45;
+  background-image:radial-gradient(rgba(80,60,80,.06) .7px, transparent .7px);
+  background-size:7px 7px;
+}
+a { color:inherit; }
+
+.hero {
+  position:relative; overflow:hidden;
+  padding:64px 20px 52px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,.035) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 70% 70%, rgba(255,255,255,.025) 0 1px, transparent 1.5px),
+    #263f38;
+  background-size:17px 19px, 23px 21px, auto;
+  border-bottom:3px solid var(--ink);
+  box-shadow:inset 0 -8px 0 rgba(255,255,255,.025);
+}
+.hero::before,
+.hero::after {
+  position:absolute;
+  opacity:.55;
+  color:#f7f0d0;
+  font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+  pointer-events:none;
+}
+.hero::before {
+  content:"";
+  left:3%; top:18%; width:90px; height:44px;
+  border-top:2px solid rgba(247,240,208,.28);
+  border-bottom:2px solid rgba(247,240,208,.12);
+  transform:rotate(-4deg);
+}
+.hero::after {
+  content:"";
+  right:3%; bottom:16%; width:80px; height:28px;
+  border-bottom:2px solid rgba(247,240,208,.22);
+  transform:rotate(5deg);
+}
+.hero .eyebrow {
+  display:inline-block; padding:5px 14px;
+  border:1px solid rgba(247,240,208,.65); border-radius:6px;
+  color:#f7f0d0; background:rgba(255,255,255,.035);
+  font-size:.76rem; font-weight:800; letter-spacing:.08em;
+  box-shadow:2px 2px 0 rgba(0,0,0,.15);
+  font-family:"Comic Sans MS","Segoe Print","Bradley Hand",cursive;
+}
+h1 {
+  max-width:1000px; margin:18px auto 12px;
+  color:#fffbea;
+  font-family:"Comic Sans MS","Segoe Print","Bradley Hand","Noto Sans JP",cursive;
+  font-size:clamp(1.75rem,5vw,3.25rem);
+  line-height:1.25;
+  font-weight:800;
+  letter-spacing:.035em;
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,.18),
+    -1px 0 0 rgba(255,255,255,.08);
+}
+.hero p {
+  margin:0 auto;
+  color:#e8e2c9;
+  max-width:720px;
+  font-weight:600;
+  font-family:"Noto Sans JP",system-ui,sans-serif;
+}
+
+
+.controls {
+  position:sticky; top:0; z-index:10; padding:12px 20px;
+  background:rgba(255,253,245,.9); backdrop-filter:blur(12px);
+  border-bottom:2px solid var(--line);
+}
+.controls-inner { max-width:1160px; margin:auto; display:flex; gap:12px; align-items:center; }
+input {
+  flex:1; min-width:0; padding:12px 16px; border-radius:14px;
+  border:2px solid var(--ink); background:#fff; color:var(--ink);
+  font-size:1rem; outline:none; box-shadow:3px 3px 0 var(--blue2);
+}
+input:focus { box-shadow:4px 4px 0 var(--pink2); transform:translate(-1px,-1px); }
+.count {
+  color:var(--ink); background:var(--yellow); border:2px solid var(--ink);
+  padding:5px 10px; border-radius:999px; white-space:nowrap;
+  font-size:.82rem; font-weight:900;
+}
+main { max-width:1160px; margin:0 auto; padding:34px 20px 80px; }
+.grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+
+.card {
+  position:relative;
+  background:#fff; border:2px solid var(--ink); border-radius:20px; overflow:hidden;
+  box-shadow:var(--shadow);
+  opacity:0; transform:translateY(22px) scale(.985);
+  animation:cardIn .62s cubic-bezier(.2,.75,.2,1) forwards;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.card:nth-child(3n) { border-top-color:var(--blue); }
+.card:nth-child(3n+1) { border-top-color:var(--pink); }
+.card:nth-child(3n+2) { border-top-color:var(--purple); }
+.card:hover {
+  transform:translateY(-8px) rotate(-.25deg);
+  box-shadow:0 17px 0 rgba(86,69,91,.08),0 24px 38px rgba(86,69,91,.15);
+}
+.card::after {
+  content:""; position:absolute; width:12px; height:12px; border-radius:50%;
+  right:16px; top:16px; background:var(--yellow); border:2px solid var(--ink);
+}
+.card-header { padding:19px 46px 12px 20px; }
+.no {
+  display:inline-block; color:var(--ink); background:var(--yellow);
+  border:1.5px solid var(--ink); border-radius:8px; padding:1px 8px;
+  font-size:.76rem; font-weight:950; transform:rotate(-1deg);
+}
+h2 {
+  margin:8px 0 0; line-height:1.45; font-weight:850;
+  font-size:clamp(.98rem,1.25vw,1.13rem);
+  overflow-wrap:anywhere;
+}
+.embed {
+  width:100%; max-width:650px; margin:0 auto;
+  padding:0 14px 17px; min-height:130px;
+}
+.tweet-wrap { display:flex; justify-content:center; width:100%; }
+.twitter-tweet { margin-top:0 !important; margin-bottom:0 !important; max-width:100% !important; }
+
+.empty {
+  padding:40px 20px; text-align:center; color:var(--muted);
+  border:2px dashed var(--line); border-radius:16px; background:#fff;
+}
+footer { text-align:center; color:var(--muted); padding:0 20px 40px; font-size:.85rem; }
+
+@keyframes cardIn {
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .card { animation:none; opacity:1; transform:none; transition:none; }
+  .card:hover { transform:none; }
+}
+
+@media (max-width:800px) {
+  .grid { grid-template-columns:1fr; }
+  .card { border-radius:16px; }
+  .embed { max-width:720px; padding-left:4px; padding-right:4px; }
+}
+@media (max-width:560px) {
+  .hero { padding:48px 15px 36px; }
+  .hero::before { left:3%; top:18%; font-size:2rem; }
+  .hero::after { right:4%; bottom:10%; font-size:2.2rem; }
+  .controls { padding:9px 10px; }
+  .controls-inner { gap:7px; }
+  .count { display:none; }
+  main { padding:20px 5px 55px; }
+  .grid { gap:18px; }
+  .card {
+    width:100%;
+    border-radius:14px;
+    box-shadow:0 7px 0 rgba(86,69,91,.08),0 10px 24px rgba(86,69,91,.09);
+  }
+  .card:hover { transform:translateY(-3px); }
+  .card-header { padding:15px 38px 9px 14px; }
+  .embed {
+    width:100%;
+    max-width:none;
+    padding:0 0 9px;
+  }
+  h2 {
+    /* タイトルは内容量に応じてclampで自動調整 */
+    font-size:clamp(.88rem,3.9vw,1.05rem);
+    line-height:1.42;
+  }
+  .twitter-tweet {
+    width:100% !important;
+    min-width:0 !important;
+  }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">ARK CLIP &amp; CUTOUT COLLECTION</div>
+  <h1>はるめろ学園ARK部　はめ学D組<br>クリップ＆切り抜き集</h1>
+  <p class="hero-description"></p>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <input id="search" type="search" placeholder="タイトルを検索…（例：夜透遥、メガラプトル）" aria-label="タイトルを検索">
+    <span class="count" id="count">51 / 51 本</span>
+  </div>
+</div>
+
+<main>
+  <section class="grid" id="video-list" aria-live="polite"></section>
+  <div class="empty" id="empty" hidden>該当する切り抜きがありません。</div>
+</main>
+
+<footer>
+  © banana_3150vv はめ学D組 クリップ＆切り抜き集
+</footer>
+
+<script>
+const videos = [{"no": 1, "title": "最強の槍兵になった星狩ロイそして大盛り上がりの灰宮ユウマと夜透遥", "id": "2098834013888937985", "url": "https://x.com/banana_3150vv/status/2098834013888937985"}, {"no": 2, "title": "星狩ロイさんと呼び方談義", "id": "2098841273583182274", "url": "https://x.com/banana_3150vv/status/2098841273583182274"}, {"no": 3, "title": "夜透遥のイントネーションが気になる灰宮ユウマ", "id": "2099047319907996068", "url": "https://x.com/banana_3150vv/status/2099047319907996068"}, {"no": 4, "title": "歌が激うまな傭兵(ユゥレイさん)に出くわす夜透遥", "id": "2099186789114319268", "url": "https://x.com/banana_3150vv/status/2099186789114319268"}, {"no": 5, "title": "メガラプトルに拠点半壊の借りを返したいはめ学D組とワンチャン狙ってる灼楽えん", "id": "2099193067727462461", "url": "https://x.com/banana_3150vv/status/2099193067727462461"}, {"no": 6, "title": "拠点を半壊させたメガラプトルの処理後、松本等しいさんのミームで共鳴する夜透遥と灰宮ユウマ", "id": "2099204335611879834", "url": "https://x.com/banana_3150vv/status/2099204335611879834"}, {"no": 7, "title": "大事なところ全部忘れちゃった夜透遥", "id": "2099556892762935578", "url": "https://x.com/banana_3150vv/status/2099556892762935578"}, {"no": 8, "title": "学園長節に飲み込まれかけるはめ学D組", "id": "2099562455928299697", "url": "https://x.com/banana_3150vv/status/2099562455928299697"}, {"no": 9, "title": "ちょっぴり気まずくて何だかぎこちないはめ学D組によるTPの瞬間", "id": "2099569778566545455", "url": "https://x.com/banana_3150vv/status/2099569778566545455"}, {"no": 10, "title": "ωあな違い＊", "id": "2100275121856680372", "url": "https://x.com/banana_3150vv/status/2100275121856680372"}, {"no": 11, "title": "ボケての少年みたいになる夜透遥", "id": "2100279403876057392", "url": "https://x.com/banana_3150vv/status/2100279403876057392"}, {"no": 12, "title": "悲しきモンスターになってしまった星狩ロイとはめ学D組", "id": "2100288126124192255", "url": "https://x.com/banana_3150vv/status/2100288126124192255"}, {"no": 13, "title": "恐れ知らずな企業勢1とザワつく個人勢3", "id": "2100292749002240472", "url": "https://x.com/banana_3150vv/status/2100292749002240472"}, {"no": 14, "title": "VTuberの深淵に触れる無敵のがおまるさんとラインがガバガバな夜透遥", "id": "2100640657161461917", "url": "https://x.com/banana_3150vv/status/2100640657161461917"}, {"no": 15, "title": "他意がある夜透遥と悩んでそうな星狩ロイ", "id": "2100645357185294456", "url": "https://x.com/banana_3150vv/status/2100645357185294456"}, {"no": 16, "title": "イライラの灼楽えんと大ウケの夜透遥", "id": "2100652614606369251", "url": "https://x.com/banana_3150vv/status/2100652614606369251"}, {"no": 17, "title": "定期的に気まずいはめ学D組～川遊び編～", "id": "2101360195809218669", "url": "https://x.com/banana_3150vv/status/2101360195809218669"}, {"no": 18, "title": "鳴宮空に彼女をカミングアウトする夜透遥と見知らぬところで巻き込まれる灼楽えん", "id": "2101363647453028574", "url": "https://x.com/banana_3150vv/status/2101363647453028574"}, {"no": 19, "title": "フレネミー夜透遥", "id": "2101369912023458032", "url": "https://x.com/banana_3150vv/status/2101369912023458032"}, {"no": 20, "title": "焼き鳥タレ塩論争で盛り上がるはめ学D組", "id": "2101375127707631914", "url": "https://x.com/banana_3150vv/status/2101375127707631914"}, {"no": 21, "title": "暇を持て余しマイクを食った挙句、えびばでぃすくーすくーし始める灼楽えんと夜透遥", "id": "2101721204486983736", "url": "https://x.com/banana_3150vv/status/2101721204486983736"}, {"no": 22, "title": "意思疎通がはかれないはめ学D組", "id": "2102084382899286427", "url": "https://x.com/banana_3150vv/status/2102084382899286427"}, {"no": 23, "title": "全ロスから救ってくれたすいとさんに感謝を述べるも、古のミームを繰り出す星狩ロイ", "id": "2102092024518480328", "url": "https://x.com/banana_3150vv/status/2102092024518480328"}, {"no": 24, "title": "編入生兼新メンバー緋衣のの葉に痛いところを指摘されるはめ学D組", "id": "2102099013009039561", "url": "https://x.com/banana_3150vv/status/2102099013009039561"}, {"no": 25, "title": "大歓迎ムードのはめ学D組とトライブ名の印象に引っ張られる新メンバー緋衣のの葉", "id": "2102107414539739410", "url": "https://x.com/banana_3150vv/status/2102107414539739410"}, {"no": 26, "title": "アピール会場にてUMAを看取るはるとらさんと各トライブ代表者たち", "id": "2102219104333803593", "url": "https://x.com/banana_3150vv/status/2102219104333803593"}, {"no": 27, "title": "学園長による演説(同情型4本立て)を聴く各トライブ代表者と心当たりのある話をされる夜透遥", "id": "2102229569327772102", "url": "https://x.com/banana_3150vv/status/2102229569327772102"}, {"no": 28, "title": "ARKおよそ10日目にして心が無くなってしまったはめ学D組", "id": "2102320014040936788", "url": "https://x.com/banana_3150vv/status/2102320014040936788"}, {"no": 29, "title": "仕込みのモノマネを披露する夜透遥と配信を守るため野次を飛ばす灰宮ユウマ＆灼楽えん", "id": "2102448151940780073", "url": "https://x.com/banana_3150vv/status/2102448151940780073"}, {"no": 30, "title": "オウムになった夜透遥と丁寧に拾う灰宮ユウマ", "id": "2102451348621103408", "url": "https://x.com/banana_3150vv/status/2102451348621103408"}, {"no": 31, "title": "口がまわらない夜透遥と丁寧に拾う灼楽えん", "id": "2102454354745905430", "url": "https://x.com/banana_3150vv/status/2102454354745905430"}, {"no": 32, "title": "メガラプトルのテイムミッションに集中するあまりQUARNOTEsのブランディングを誤る夜透遥と、男子高校生すぎる応援団の皆さん", "id": "2102541413904945569", "url": "https://x.com/banana_3150vv/status/2102541413904945569"}, {"no": 33, "title": "不適切発言への謝罪と切り抜き免罪符のシーン", "id": "2102552540739236127", "url": "https://x.com/banana_3150vv/status/2102552540739236127"}, {"no": 34, "title": "メガラプトルに全てを奪われた者同士、復讐に燃える夜透遥と緋衣のの葉", "id": "2103551504041037834", "url": "https://x.com/banana_3150vv/status/2103551504041037834"}, {"no": 35, "title": "息子に手を焼くロットママと自由奔放な4兄弟たち", "id": "2103787892455928265", "url": "https://x.com/banana_3150vv/status/2103787892455928265"}, {"no": 36, "title": "ユウティラヌステイム中はるとらさんに見せつける緋衣のの葉と夜透遥", "id": "2104124770065522931", "url": "https://x.com/banana_3150vv/status/2104124770065522931"}, {"no": 37, "title": "灰宮ユウマのモノマネで盛り上がる灼楽えんと夜透遥", "id": "2104259743934234947", "url": "https://x.com/banana_3150vv/status/2104259743934234947"}, {"no": 38, "title": "彫り師の被害にあうNiNAと星狩ロイ", "id": "2104266769485672953", "url": "https://x.com/banana_3150vv/status/2104266769485672953"}, {"no": 39, "title": "ボスの戦利品に薄い反応を見せ紅神ハイセを泣かせてしまう歌衣メイカと夜透遥", "id": "2104628258658713621", "url": "https://x.com/banana_3150vv/status/2104628258658713621"}, {"no": 40, "title": "ボス戦について祥陽さんからとても大切なことを教えてもらう夜透遥", "id": "2104635926437871658", "url": "https://x.com/banana_3150vv/status/2104635926437871658"}, {"no": 41, "title": "【コント】こんな燃流祥陽はいやだ", "id": "2104641482192040119", "url": "https://x.com/banana_3150vv/status/2104641482192040119"}, {"no": 42, "title": "癇癪を起こす灰宮ユウマ&冷笑する夜透遥", "id": "2104995780235087899", "url": "https://x.com/banana_3150vv/status/2104995780235087899"}, {"no": 43, "title": "ロット母作『○EXしないと出られない部屋』と腐男子の見解", "id": "2105000930186047597", "url": "https://x.com/banana_3150vv/status/2105000930186047597"}, {"no": 44, "title": "灰宮ユウマと夜透遥にかまちょする夜香レンリ", "id": "2105714909812248978", "url": "https://x.com/banana_3150vv/status/2105714909812248978"}, {"no": 45, "title": "おかんすぎる美鷺ロットと息子すぎる灰宮ユウマ&夜透遥", "id": "2105720484482760888", "url": "https://x.com/banana_3150vv/status/2105720484482760888"}, {"no": 46, "title": "メイカのアニキの断末魔を聞いてしまう夜透遥", "id": "2105725115241812451", "url": "https://x.com/banana_3150vv/status/2105725115241812451"}, {"no": 47, "title": "淫紋で定着してしまった夜透遥のタトゥーとレンリさんによるはるとらさんの激似モノマネ", "id": "2105732366249644241", "url": "https://x.com/banana_3150vv/status/2105732366249644241"}, {"no": 48, "title": "【※コント※】やっぱり燃える時と燃えない時がありそうな祥陽さんとD組", "id": "2106074113496461567", "url": "https://x.com/banana_3150vv/status/2106074113496461567"}, {"no": 49, "title": "あくびに癖がありすぎる星狩ロイと酷評する夜透遥", "id": "2106458979908079894", "url": "https://x.com/banana_3150vv/status/2106458979908079894"}, {"no": 50, "title": "例の『出られない部屋』について話す星狩ロイと夜透遥", "id": "2106465719370362957", "url": "https://x.com/banana_3150vv/status/2106465719370362957"}, {"no": 51, "title": "弱めのキング(Lv.7)とはめ学D組の皆さん", "id": "2106477643193602500", "url": "https://x.com/banana_3150vv/status/2106477643193602500"}];
+
+const list = document.getElementById("video-list");
+const empty = document.getElementById("empty");
+const count = document.getElementById("count");
+const search = document.getElementById("search");
+
+function render(items) {
+  list.innerHTML = items.map((v, index) => `
+    <article class="card" style="animation-delay:${Math.min(index * 45, 900)}ms">
+      <div class="card-header">
+        <div class="no">CLIP ${v.no.toString().padStart(2, "0")}</div>
+        <h2>${escapeHtml(v.title)}</h2>
+      </div>
+      <div class="embed">
+        <div class="tweet-wrap">
+          <blockquote class="twitter-tweet" data-dnt="true">
+            <a href="${v.url}">${escapeHtml(v.url)}</a>
+          </blockquote>
+        </div>
+      </div>
+    </article>
+  `).join("");
+
+  empty.hidden = items.length !== 0;
+  count.textContent = `${items.length} / ${videos.length} 本`;
+
+  if (window.twttr && window.twttr.widgets) {
+    window.twttr.widgets.load(list);
+  }
+}
+
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+  })[c]);
+}
+
+search.addEventListener("input", () => {
+  const q = search.value.trim().toLowerCase();
+  const filtered = q ? videos.filter(v => v.title.toLowerCase().includes(q)) : videos;
+  render(filtered);
+});
+
+render(videos);
+</script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
