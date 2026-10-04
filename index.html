@@ -148,15 +148,49 @@ main { max-width:1160px; margin:0 auto; padding:34px 20px 80px; }
   font-size:.76rem; font-weight:950; transform:rotate(-1deg);
 }
 h2 {
-  margin:8px 0 0; line-height:1.45; font-weight:850;
-  font-size:clamp(.98rem,1.25vw,1.13rem);
+  position:relative;
+  margin:10px 0 0;
+  padding:11px 14px 11px 17px;
+  line-height:1.5;
+  font-weight:900;
+  font-size:clamp(1.12rem,1.55vw,1.32rem);
+  letter-spacing:.015em;
   overflow-wrap:anywhere;
+  background:linear-gradient(90deg, var(--pink2), rgba(255,214,225,.28) 72%, transparent);
+  border-radius:8px;
 }
+h2::before {
+  content:"";
+  position:absolute;
+  left:0; top:8px; bottom:8px;
+  width:5px;
+  border-radius:999px;
+  background:var(--pink);
+}
+.card:nth-child(3n) h2 {
+  background:linear-gradient(90deg, var(--blue2), rgba(217,242,255,.25) 72%, transparent);
+}
+.card:nth-child(3n) h2::before { background:var(--blue); }
+.card:nth-child(3n+2) h2 {
+  background:linear-gradient(90deg, rgba(155,134,232,.18), rgba(155,134,232,.05) 72%, transparent);
+}
+.card:nth-child(3n+2) h2::before { background:var(--purple); }
 .embed {
   width:100%; max-width:650px; margin:0 auto;
   padding:0 14px 17px; min-height:130px;
 }
-.tweet-wrap { display:flex; justify-content:center; width:100%; }
+.tweet-wrap { display:flex; justify-content:center; width:100%; overflow:hidden; }
+.twitter-tweet {
+  margin-top:0 !important;
+  margin-bottom:0 !important;
+  max-width:100% !important;
+  width:100% !important;
+  min-width:0 !important;
+}
+.twitter-tweet a {
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
 .twitter-tweet { margin-top:0 !important; margin-bottom:0 !important; max-width:100% !important; }
 
 .empty {
@@ -201,16 +235,355 @@ footer { text-align:center; color:var(--muted); padding:0 20px 40px; font-size:.
     padding:0 0 9px;
   }
   h2 {
-    /* タイトルは内容量に応じてclampで自動調整 */
-    font-size:clamp(.88rem,3.9vw,1.05rem);
-    line-height:1.42;
+    /* スマホでもタイトルをしっかり目立たせる */
+    font-size:clamp(1.02rem,4.4vw,1.18rem);
+    line-height:1.48;
+    padding:10px 12px 10px 15px;
   }
   .twitter-tweet {
     width:100% !important;
+    max-width:100% !important;
     min-width:0 !important;
   }
 }
+
+
+
+/* TITLE EMPHASIS START */
+.card-header h2 {
+  margin:11px 0 0;
+  padding:0 0 11px;
+  background:transparent !important;
+  background-image:none !important;
+  border:none !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  font-size:clamp(1.08rem,1.45vw,1.28rem);
+  font-weight:850;
+  line-height:1.48;
+  letter-spacing:.01em;
+}
+
+.card-header h2::before {
+  content:none !important;
+  display:none !important;
+}
+
+.card-header h2::after {
+  content:"";
+  display:block;
+  width:100%;
+  height:1px;
+  margin-top:10px;
+  background:rgba(59,53,69,.20) !important;
+  background-image:none !important;
+}
+
+@media (max-width:560px) {
+  .card-header h2 {
+    margin-top:9px;
+    padding-bottom:8px;
+    font-size:clamp(1rem,4.25vw,1.14rem);
+    line-height:1.46;
+  }
+
+  .card-header h2::after {
+    margin-top:8px;
+  }
+}
+/* TITLE EMPHASIS END */
+
+
+/* X EMBED FIX START */
+/* X公式投稿（本文＋動画）をカード内に余白を持たせて表示 */
+.embed {
+  width:100%;
+  max-width:none;
+  margin:0 auto;
+  padding:0 18px 18px;
+}
+
+.tweet-wrap {
+  width:100%;
+  max-width:650px;
+  margin:0 auto;
+  overflow:visible;
+  display:block;
+}
+
+.tweet-wrap .twitter-tweet,
+.tweet-wrap iframe {
+  width:100% !important;
+  max-width:650px !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+.x-post-link {
+  display:block;
+  width:100%;
+  max-width:650px;
+  margin:8px auto 0;
+  color:var(--muted);
+  font-size:.82rem;
+  text-decoration:none;
+  text-align:left;
+}
+
+.x-post-link:hover {
+  text-decoration:underline;
+}
+
+@media (max-width:560px) {
+  .embed {
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .tweet-wrap,
+  .x-post-link {
+    max-width:none;
+  }
+}
+/* X EMBED FIX END */
+
+
+/* CARD HOVER ACCENT ONLY */
+@media (hover:hover) and (pointer:fine) {
+  .card:hover {
+    transform:translateY(-3px);
+    box-shadow:var(--shadow);
+  }
+
+  .card:hover::before {
+    content:"";
+    position:absolute;
+    inset:5px;
+    border:1.5px solid rgba(59,53,69,.18);
+    border-radius:15px;
+    pointer-events:none;
+    z-index:2;
+  }
+
+  .card:nth-child(3n):hover::before {
+    border-color:rgba(103,183,232,.55);
+  }
+
+  .card:nth-child(3n+1):hover::before {
+    border-color:rgba(255,126,159,.55);
+  }
+
+  .card:nth-child(3n+2):hover::before {
+    border-color:rgba(155,134,232,.55);
+  }
+}
+
+
+/* EQUAL CARD HEIGHTS START */
+/* 2列の全カードを完全に同じ高さへ */
+.grid {
+  align-items:stretch;
+}
+
+.card {
+  height:820px;
+  display:flex;
+  flex-direction:column;
+}
+
+/* CLIP番号＋タイトル欄も全カード同じ高さ */
+.card-header {
+  height:150px;
+  min-height:150px;
+  max-height:150px;
+  display:flex;
+  flex-direction:column;
+  flex:0 0 150px;
+  overflow:hidden;
+}
+
+.card-header .no {
+  align-self:flex-start;
+  flex:0 0 auto;
+}
+
+.card-header h2 {
+  flex:1 1 auto;
+  min-height:0;
+  overflow:hidden;
+}
+
+/* 投稿表示部分も残り高さを統一 */
+.embed {
+  flex:1 1 auto;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+}
+
+.tweet-wrap {
+  flex:1 1 auto;
+  min-height:0;
+  overflow:auto;
+}
+
+/* Xリンクはカード下部で位置を統一 */
+.x-post-link {
+  flex:0 0 auto;
+}
+
+/* スマホでも全カード同一高さ */
+@media (max-width:560px) {
+  .card {
+    height:760px;
+  }
+
+  .card-header {
+    height:140px;
+    min-height:140px;
+    max-height:140px;
+    flex-basis:140px;
+  }
+}
+/* EQUAL CARD HEIGHTS END */
+
+
+/* CARD HEIGHT + CLIP NUMBER SIZE ONLY */
+.card {
+  height:550px;
+}
+
+.no {
+  font-size:.88rem;
+  padding:3px 10px;
+}
+
+@media (max-width:560px) {
+  .card {
+    height:510px;
+  }
+
+  .no {
+    font-size:.86rem;
+    padding:3px 10px;
+  }
+}
+
+
+/* UNIFORM TITLE SIZE ONLY */
+.card-header h2 {
+  font-size:1.13rem !important;
+  font-weight:900 !important;
+}
+
+@media (max-width:560px) {
+  .card-header h2 {
+    font-size:1.05rem !important;
+    font-weight:900 !important;
+  }
+}
+
+
+/* BACKGROUND EMOJI DECORATION ONLY */
+body {
+  position:relative;
+}
+
+.bg-emoji-layer {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+.bg-emoji {
+  position:absolute;
+  opacity:.16;
+  user-select:none;
+  filter:saturate(.85);
+  animation:bgEmojiFloat var(--float-time) ease-in-out infinite alternate;
+}
+
+@keyframes bgEmojiFloat {
+  from { transform:translate3d(0,0,0) rotate(var(--rot)); }
+  to   { transform:translate3d(var(--dx),var(--dy),0) rotate(calc(var(--rot) + 8deg)); }
+}
+
+/* Ensure all actual page content/cards stay above the emoji background */
+header,
+main,
+footer,
+.search-wrap,
+.grid,
+.card {
+  position:relative;
+  z-index:1;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .bg-emoji { animation:none !important; }
+}
+
+
+/* REMOVE ORIGINAL YELLOW / BLUE BACKGROUND CIRCLES */
+body::before,
+body::after {
+  content:none !important;
+  display:none !important;
+  background:none !important;
+}
+
+/* MAIN HERO TITLE FONT: unified Japanese/Latin pop-style system font */
+.hero h1,
+header h1 {
+  font-family:
+    "Hiragino Maru Gothic ProN",
+    "Hiragino Maru Gothic Pro",
+    "Yu Gothic",
+    "YuGothic",
+    "Meiryo",
+    sans-serif !important;
+  font-weight:800;
+  letter-spacing:.035em;
+}
+
+
+/* MAIN TITLE: MORE POP */
+.hero h1,
+header h1 {
+  font-family:
+    "Hiragino Maru Gothic ProN",
+    "Hiragino Maru Gothic Pro",
+    "BIZ UDPGothic",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif !important;
+  font-weight:900 !important;
+  letter-spacing:.055em !important;
+  transform:scaleY(1.04);
+  transform-origin:center;
+}
+
+
+/* MAIN TITLE: CRAFT MINCHO */
+.hero h1,
+header h1 {
+  font-family:
+    "CraftM",
+    "クラフト明朝",
+    "Yu Mincho",
+    "YuMincho",
+    "Hiragino Mincho ProN",
+    "Hiragino Mincho Pro",
+    serif !important;
+  font-weight:400 !important;
+  letter-spacing:.045em !important;
+  transform:none !important;
+}
+
 </style>
+<link rel="stylesheet" href="https://cdn.font-stream.com/font/craftm.css">
 </head>
 <body>
 <header class="hero">
@@ -243,6 +616,12 @@ const empty = document.getElementById("empty");
 const count = document.getElementById("count");
 const search = document.getElementById("search");
 
+function escapeHtml(s) {
+  return s.replace(/[&<>"']/g, c => ({
+    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
+  })[c]);
+}
+
 function render(items) {
   list.innerHTML = items.map((v, index) => `
     <article class="card" style="animation-delay:${Math.min(index * 45, 900)}ms">
@@ -252,10 +631,18 @@ function render(items) {
       </div>
       <div class="embed">
         <div class="tweet-wrap">
-          <blockquote class="twitter-tweet" data-dnt="true">
-            <a href="${v.url}">${escapeHtml(v.url)}</a>
+          <blockquote class="twitter-tweet"
+                      data-dnt="true"
+                      data-theme="light"
+                      data-align="center"
+                      data-conversation="none">
+            <a href="${v.url}">Xで投稿を見る</a>
           </blockquote>
         </div>
+        <a class="x-post-link"
+           href="${v.url}"
+           target="_blank"
+           rel="noopener noreferrer">Xで投稿を見る</a>
       </div>
     </article>
   `).join("");
@@ -263,15 +650,26 @@ function render(items) {
   empty.hidden = items.length !== 0;
   count.textContent = `${items.length} / ${videos.length} 本`;
 
-  if (window.twttr && window.twttr.widgets) {
-    window.twttr.widgets.load(list);
-  }
+  loadXEmbeds();
 }
 
-function escapeHtml(s) {
-  return s.replace(/[&<>"']/g, c => ({
-    "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#039;"
-  })[c]);
+function loadXEmbeds() {
+  if (window.twttr && window.twttr.widgets) {
+    window.twttr.widgets.load(list);
+    return;
+  }
+
+  // widgets.js がまだ読み込み中なら少し待って再試行
+  let tries = 0;
+  const timer = setInterval(() => {
+    tries++;
+    if (window.twttr && window.twttr.widgets) {
+      clearInterval(timer);
+      window.twttr.widgets.load(list);
+    } else if (tries >= 40) {
+      clearInterval(timer);
+    }
+  }, 250);
 }
 
 search.addEventListener("input", () => {
@@ -280,8 +678,62 @@ search.addEventListener("input", () => {
   render(filtered);
 });
 
+// HTML自体は待たずに描画し、X公式widgets.jsが利用可能になり次第投稿へ変換する
 render(videos);
 </script>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script defer src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<script>
+(function () {
+  const icons = ["🦋","🛸","🎰","🏹","🌌","🌺","🌹"];
+  const layer = document.createElement("div");
+  layer.className = "bg-emoji-layer";
+  layer.setAttribute("aria-hidden", "true");
+
+  /* Deterministic pseudo-random placement so layout is stable on reload. */
+  let seed = 3150;
+  function rand() {
+    seed = (seed * 9301 + 49297) % 233280;
+    return seed / 233280;
+  }
+
+  const cols = 6;
+  const rows = 6;
+  const count = cols * rows;
+  for (let i = 0; i < count; i++) {
+    const el = document.createElement("span");
+    el.className = "bg-emoji";
+    /* Balanced distribution: cycle through all seven icons so the
+       same emoji does not bunch up or appear next to itself repeatedly. */
+    const rowIndex = Math.floor(i / cols);
+    const colIndex = i % cols;
+    const iconIndex = (colIndex + rowIndex * 3) % icons.length;
+    el.textContent = icons[iconIndex];
+
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    const cellW = 100 / cols;
+    const cellH = 100 / rows;
+
+    /* One emoji per grid cell + small random offset:
+       keeps the scattered feeling without clumping together. */
+    const x = col * cellW + cellW * (0.22 + rand() * 0.56);
+    const y = row * cellH + cellH * (0.22 + rand() * 0.56);
+    el.style.left = x + "%";
+    el.style.top = y + "%";
+    el.style.fontSize = "68px";
+    el.style.setProperty("--rot", ((rand() * 50) - 25) + "deg");
+    el.style.setProperty("--dx", ((rand() * 16) - 8) + "px");
+    el.style.setProperty("--dy", ((rand() * 18) - 9) + "px");
+    el.style.setProperty("--float-time", (5 + rand() * 5) + "s");
+    el.style.animationDelay = (-rand() * 6) + "s";
+    layer.appendChild(el);
+  }
+
+  document.body.prepend(layer);
+})();
+</script>
+
 </body>
 </html>
