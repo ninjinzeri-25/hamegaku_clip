@@ -535,47 +535,8 @@ body::after {
 /* MAIN HERO TITLE FONT: unified Japanese/Latin pop-style system font */
 .hero h1,
 header h1 {
-  font-family:
-    "Hiragino Maru Gothic ProN",
-    "Hiragino Maru Gothic Pro",
-    "Yu Gothic",
-    "YuGothic",
-    "Meiryo",
-    sans-serif !important;
-  font-weight:800;
-  letter-spacing:.035em;
-}
-
-
-/* MAIN TITLE: MORE POP */
-.hero h1,
-header h1 {
-  font-family:
-    "Hiragino Maru Gothic ProN",
-    "Hiragino Maru Gothic Pro",
-    "BIZ UDPGothic",
-    "Yu Gothic",
-    "Meiryo",
-    sans-serif !important;
-  font-weight:900 !important;
-  letter-spacing:.055em !important;
-  transform:scaleY(1.04);
-  transform-origin:center;
-}
-
-
-/* MAIN TITLE: CRAFT MINCHO */
-.hero h1,
-header h1 {
-  font-family:
-    "CraftM",
-    "クラフト明朝",
-    "Yu Mincho",
-    "YuMincho",
-    "Hiragino Mincho ProN",
-    "Hiragino Mincho Pro",
-    serif !important;
-  font-weight:400 !important;
+  font-family:"M PLUS Rounded 1c","Hiragino Maru Gothic ProN","Yu Gothic","Meiryo",sans-serif !important;
+  font-weight: 900 !important;
   letter-spacing:.045em !important;
   transform:none !important;
 }
@@ -597,6 +558,7 @@ header h1 {
 }
 
 </style>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="hero">
@@ -633,6 +595,7 @@ const list = document.getElementById("video-list");
 const empty = document.getElementById("empty");
 const count = document.getElementById("count");
 const search = document.getElementById("search");
+const searchKeywords = {"1":["灰宮ユウマ","星狩ロイ"],"2":["星狩ロイ"],"3":["灰宮ユウマ"],"4":["ユゥレイの怪奇譚"],"5":["灰宮ユウマ","星狩ロイ","灼楽えん"],"6":["灰宮ユウマ"],"7":["はるとら","灼楽えん","鳴宮空","アルロッド"],"8":["灰宮ユウマ","灼楽えん","はるとら"],"9":["灰宮ユウマ","灼楽えん"],"10":["美鷺ロット","灰宮ユウマ","星狩ロイ","灼楽えん"],"11":["美鷺ロット","灰宮ユウマ","星狩ロイ","灼楽えん"],"12":["星狩ロイ","灼楽えん"],"13":["灰宮ユウマ","星狩ロイ","灼楽えん","ユゥレイの怪奇譚"],"14":["灰宮ユウマ","星狩ロイ","灼楽えん","はるとら","がおまる"],"15":["灰宮ユウマ","星狩ロイ","がおまる"],"16":["星狩ロイ","灼楽えん"],"17":["灰宮ユウマ","灼楽えん"],"18":["鳴宮空","灼楽えん"],"19":["灰宮ユウマ","星狩ロイ","灼楽えん","燃流祥陽"],"20":["星狩ロイ","灼楽えん","燃流祥陽"],"21":["灼楽えん","灰宮ユウマ","星狩ロイ","美鷺ロット","燃流祥陽"],"22":["星狩ロイ","灼楽えん","緋衣のの葉"],"23":["星狩ロイ","灼楽えん"],"24":["星狩ロイ","灼楽えん","緋衣のの葉"],"25":["灰宮ユウマ","星狩ロイ","灼楽えん","緋衣のの葉"],"26":["はるとら","灰宮ユウマ","歌衣メイカ","燃流祥陽","紅神ハイセ"],"27":["はるとら","歌衣メイカ","燃流祥陽","紅神ハイセ"],"28":["星狩ロイ","灼楽えん","緋衣のの葉"],"29":["灰宮ユウマ","灼楽えん"],"30":["灰宮ユウマ","灼楽えん"],"31":["灰宮ユウマ","灼楽えん","諸星空"],"32":["灰宮ユウマ","灼楽えん","諸星空","燃流祥陽","紅神ハイセ"],"33":["灰宮ユウマ","諸星空"],"34":["緋衣のの葉"],"35":["美鷺ロット","灰宮ユウマ","星狩ロイ","灼楽えん"],"36":["緋衣のの葉","はるとら"],"37":["灰宮ユウマ","灼楽えん"],"38":["NiNA","灼楽えん","諸星空","星狩ロイ","灰宮ユウマ"],"39":["歌衣メイカ","燃流祥陽","紅神ハイセ"],"40":["燃流祥陽"],"41":["燃流祥陽","灼楽えん","星狩ロイ"],"42":["灰宮ユウマ","灼楽えん"],"43":["灼楽えん","スクラップ","美鷺ロット","灰宮ユウマ","NiNA","星狩ロイ"],"44":["灰宮ユウマ","夜香レンリ"],"45":["美鷺ロット","灰宮ユウマ","諸星空"],"46":["歌衣メイカ"],"47":["灰宮ユウマ","夜香レンリ","はるとら"],"48":["燃流祥陽","灰宮ユウマ","灼楽えん","美鷺ロット","緋衣のの葉"],"49":["灰宮ユウマ","星狩ロイ"],"50":["星狩ロイ","美鷺ロット"],"51":["灰宮ユウマ","灼楽えん","美鷺ロット","諸星空"],"52":["歌衣メイカ","灰宮ユウマ","星狩ロイ","灼楽えん","美鷺ロット","諸星空","緋衣のの葉"],"53":["星狩ロイ","緋衣のの葉","諸星空"],"54":["スクラップ","ユゥレイの怪奇譚","鳴宮空","美鷺ロット","星狩ロイ"],"55":["灰宮ユウマ","諸星空","美鷺ロット","緋衣のの葉"]};
 
 function escapeHtml(s) {
   return s.replace(/[&<>"']/g, c => ({
@@ -692,7 +655,10 @@ function loadXEmbeds() {
 
 search.addEventListener("input", () => {
   const q = search.value.trim().toLowerCase();
-  const filtered = q ? videos.filter(v => v.title.toLowerCase().includes(q)) : videos;
+  const filtered = q ? videos.filter(v => {
+    const extra = (searchKeywords[v.no] || []).join(" ").toLowerCase();
+    return v.title.toLowerCase().includes(q) || extra.includes(q);
+  }) : videos;
   render(filtered);
 });
 
